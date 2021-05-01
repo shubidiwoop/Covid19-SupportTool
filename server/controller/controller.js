@@ -1,6 +1,9 @@
 const requestDb = require('../model/model');
 const volunteerDb = require('../model/volunteer');
-
+const post = require('../bot/telegram');
+const dotenv = require('dotenv');
+dotenv.config({path:'config.env'})
+const tlink = {"Delhi" : process.env.TLINK_DEL}
 exports.create = (req,res)=>{
     if(!req.body){
         res.status(400).send({message : "Content Empty"});
@@ -22,11 +25,13 @@ exports.create = (req,res)=>{
     request
     .save(request)
     .then(data => {
-        res.send(data._id);
+        res.send(data);
+        const msg = "New Requirement Alert." + "\nPatient name : " + data.pname + " \nRequirement : " + data.requirement + "\nContact Name : " + data.cname + "\nContact Number : " + data.cpho;
+        post(data.location,msg);
     })
     .catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occured"
+            message: "Some error occured"
         });
     });
 }
@@ -48,7 +53,7 @@ exports.volunteer = (req,res) => {
     volunteer
     .save(volunteer)
     .then(data => {
-        res.send(data);
+        res.send("Please Join Using this Link." + tlink[data.location]);
     })
     .catch(err => {
         res.status(500).send({
