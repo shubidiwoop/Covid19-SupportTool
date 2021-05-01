@@ -1,11 +1,17 @@
 const { render } = require('ejs');
 var express = require('express');
+const path = require('path');
 const route = express.Router();
-const services = require('../services/render');
+//const services = require('../services/render');
 const controller = require('../controller/controller');
 
 
-route.get('/', services.homeRoutes);
+
+route.get('/',(req,res)=>{
+    
+    res.sendFile(path.join(__dirname,'../../views/index.html'))
+})
+
 
 route.post('/api/request', controller.create);
 route.post('/api/volunteer', controller.volunteer);
