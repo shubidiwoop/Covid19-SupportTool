@@ -1,5 +1,5 @@
 const requestDb = require('../model/model');
-var request = require('../model/model');
+const volunteerDb = require('../model/volunteer');
 
 exports.create = (req,res)=>{
     if(!req.body){
@@ -27,6 +27,32 @@ exports.create = (req,res)=>{
     .catch(err => {
         res.status(500).send({
             message: err.message || "Some error occured"
+        });
+    });
+}
+
+exports.volunteer = (req,res) => {
+    if(!req.body){
+        res.status(400).send({message: "Invalid Input"});
+        return;
+    }
+
+    const volunteer = new volunteerDb({
+        fname: req.body.fname,
+        lname: req.body.lname,
+        phone: req.body.phone,
+        location:req.body.location,
+        email:req.body.email
+    })
+
+    volunteer
+    .save(volunteer)
+    .then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message : err.message || "Some error occured"
         });
     });
 }
