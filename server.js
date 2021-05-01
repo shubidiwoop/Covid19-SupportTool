@@ -5,11 +5,13 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const app = express();
 
+const connectDb = require('./server/database/connection');
+
 dotenv.config({path:'config.env'})
 const PORT = process.env.PORT || 8080
 
 app.use(morgan('tiny'));
-
+connectDb();
 app.use(bodyparser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs")
