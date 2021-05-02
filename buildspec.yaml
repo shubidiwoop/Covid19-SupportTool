@@ -2,9 +2,9 @@ version: 0.1
 phases:
   install:
     #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
-    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
-    runtime-versions:
-       nodejs: 10
+    # #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
+    # runtime-versions:
+    #    nodejs: 10
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
