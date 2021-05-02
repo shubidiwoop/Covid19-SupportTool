@@ -43,17 +43,18 @@ exports.volunteer = (req,res) => {
     }
 
     const volunteer = new volunteerDb({
-        fname: req.body.fname,
-        lname: req.body.lname,
-        phone: req.body.phone,
-        location:req.body.location,
-        email:req.body.email
+        vfname: req.body.vfname,
+        vlname: req.body.vlname,
+        vphone: req.body.vphone,
+        vlocation:req.body.vlocation,
+        vmail:req.body.vmail,
+        vhometown:req.body.vhometown
     })
 
     volunteer
     .save(volunteer)
     .then(data => {
-        res.send("Please Join Using this Link." + tlink[data.location]);
+        res.jsonp({link1 : tlink[data.vlocation],link2: tlink[data.vhometown]});
     })
     .catch(err => {
         res.status(500).send({

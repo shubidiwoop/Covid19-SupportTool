@@ -1,23 +1,27 @@
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    fname : {
+    vfname : {
         type : String,
         required: true
     },
-    lname : {
+    vlname : {
         type: String,
         required: true
     },
-    phone : {
+    vphone : {
         type: Number,
         required: true
     },
-    location : {
+    vlocation : {
         type: String,
         required: true
     },
-    email : {
+    vmail : {
+        type: String,
+        required: true
+    },
+    vhometown : {
         type: String,
         required: true
     }  
