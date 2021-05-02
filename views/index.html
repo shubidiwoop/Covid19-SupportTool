@@ -26,6 +26,7 @@
   border-radius: 1px;
   box-sizing: border-box;
 }
+
 .register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     margin-top: 3%;
@@ -47,6 +48,20 @@
     margin-top: 30%;
     margin-bottom: 3%;
     cursor: pointer;
+}
+.thankyou{
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: -15%;
+    margin-left: 100px
+    color: #495057;
+}
+.vthankyou{
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: -15%;
+    margin-left: 100px
+    color: #495057;
 }
 .register-right{
     background: #f8f9fa;
@@ -174,14 +189,21 @@ margin-left: 110px;
                                             <input type="text" id="PatientName" required class="form-control" placeholder="Patient's Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="PatientLocation"
-                                            class="form-control" required placeholder="Location*" value="" />
+                                            <select  id="PatientLocation" name="PatientLocation">
+                                                <option selected disabled>Select the State</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                              </select
+>
                                         </div>
                                         <div class="form-group">
                                             <input type="number" class="form-control" id="PatientAge" placeholder="Age" value="" />
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" required id="Requirement" placeholder="Requirement *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" required id="BloodGroup" placeholder="Blood Group (if Plasma) " value="" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
@@ -213,7 +235,7 @@ margin-left: 110px;
                                             <input type="text" class="form-control" required id="VolunteerFN" placeholder="First Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" required id="VolunteerLN" placeholder="Last Name *" value="" />
+                                            <input type="text" class="form-control" required id="VolunteerLN" placeholder="Last Name " value="" />
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" required id="VolunteerEmail" placeholder="Email *" value="" />
@@ -223,7 +245,10 @@ margin-left: 110px;
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control" required id="VolunteerLocation" placeholder="Location" value="" />
+                                            <input type="text" class="form-control" required id="VolunteerLocation" placeholder="Current Location*" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" maxlength="10" minlength="10"id="VolunteerHometown"  class="form-control" required placeholder="Hometown *" value="" />
                                         </div>
                                         <div>
                                             <input type="submit" class="btnRegister" id="VolunteerButton" value="Register"/>
@@ -232,6 +257,16 @@ margin-left: 110px;
 
                                     </div>
                                 </div>
+                                <div class ="col-md-12 thankyou">
+                                    
+                                    <h5>Thanks you registering.<br>
+                                    One of our Volunteer will try to get in touch with you.<br> 
+                                   Hope your Loved one gets well soon.</h5>
+                                </div>
+                                <div class ="col-md-12 vthankyou">
+                                    
+                            
+                            </div>
                             </div>
                         </div>
                     </div>
