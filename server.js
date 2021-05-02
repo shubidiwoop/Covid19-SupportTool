@@ -16,14 +16,13 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs")
 
-app.use('/css',express.static(path.resolve(__dirname, "assets/css")))
-
 app.use('/',require('./server/routes/router'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/',(req,res)=>{
-    console.log("inside")
     res.render('index.html')
 })
+
 app.listen(PORT, () => {
     console.log('Server is running on http://localhost:${PORT}')
 });
