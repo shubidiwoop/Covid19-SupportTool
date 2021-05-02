@@ -1,5 +1,7 @@
 const staticRoot = "http://localhost:3000"
 $(document).ready(function(){
+	$(".thankyou").hide();
+ //$(".vthankyou").hide();	
 	window.document.querySelector('#btnRegister1').addEventListener('click', event => {
 		var pname = $("#PatientName").val();
 		var location = $("#PatientLocation").val();
@@ -8,6 +10,8 @@ $(document).ready(function(){
 		var gender = $('input[name="gender"]:checked').val();
 		var cpho = $("#PatientContact").val();
 		var cname = $("#ContactName").val();
+		console.log(pname);
+		if(pname!=''&&location!=''&&age!=''&&requirement!=''&&gender!=''&&cpho!=''&&cname!=''){
 		var body = {
 			name: pname,
 			location:location,
@@ -32,9 +36,18 @@ $(document).ready(function(){
 			data: body,
 			success: function(response){
 					console.log("success")
+					$("#home").hide();
+                    $(".thankyou").show();	
+                    $(".vthankyou").hide();						
 			}
 	
-		})
+		});
+	}
+	else{
+
+          alert("All fields are mandatory to fill for proceeding.");
+
+	}
 	  })
 });
 
@@ -46,6 +59,7 @@ $(document).ready(function(){
 		var vphone = $("#VolunteerPhone").val();
 		var vlocation = $("#VolunteerLocation").val();
 		var vhometown = $("#VolunteerHometown").val();
+		if(vfname!=''&&vmail!=''&&vphone!=''&&vlocation!=''&&vhometown!=''&&vlname!=''){
 		var body = {
 			vfname: vfname,
 			vlname:vlname,
@@ -68,9 +82,20 @@ $(document).ready(function(){
 			},
 			data: body,
 			success: function(response){
-					alert("Please Join these two links: " + response.link1 + response.link2);
+				      var responselink1= response.link1;
+					  responselink1= responselink1.replace("t.","telegram.");
+		
+					$("#profile").hide();
+                    $(".vthankyou").append("<h5>Thank you for showing interest kindly click on the below telegram link to join the team.<br><br> <a href='"+responselink1+"'>Link</a></h5>");	
+                    $(".thankyou").hide();	
 			}
 	
-		})
-	  })
+		});
+	}
+	else{
+
+		alert("All fields are mandatory.Kindly fill all the fields.")
+	}
+	  });
+
 });
