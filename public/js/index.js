@@ -10,8 +10,9 @@ $(document).ready(function(){
 		var gender = $('input[name="gender"]:checked').val();
 		var cpho = $("#PatientContact").val();
 		var cname = $("#ContactName").val();
+		var  pcity= $("#PatientCity").val();
 		console.log(pname);
-		if(pname!=''&&location!=''&&age!=''&&requirement!=''&&gender!=''&&cpho!=''&&cname!=''){
+		if(pname!=''&&location!=''&&age!=''&&requirement!=''&&gender!=''&&cpho!=''&&cname!=''&&pcity!=''){
 		var body = {
 			name: pname,
 			location:location,
@@ -19,7 +20,8 @@ $(document).ready(function(){
 			requirement:requirement,
 			gender:gender,
 			cpho:cpho,
-			cname:cname
+			cname:cname,
+			pcity:pcity
 		};
 		$.ajax({
 			method: "POST",
@@ -84,9 +86,11 @@ $(document).ready(function(){
 			success: function(response){
 				      var responselink1= response.link1;
 					  responselink1= responselink1.replace("t.","telegram.");
+					  var responselink2= response.link2;
+					  responselink2= responselink2.replace("t.","telegram.");
 		
 					$("#profile").hide();
-                    $(".vthankyou").append("<h5>Thank you for showing interest kindly click on the below telegram link to join the team.<br><br> <a href='"+responselink1+"'>Link</a></h5>");	
+                    $(".vthankyou").append("<h5>Thank you for showing interest kindly click on the below telegram link to join the team.<br><br> <a href='"+responselink1+"'>Current Town</a><br><br> <a href='"+responselink2+"'>HomeTown</a></h5>");	
                     $(".thankyou").hide();	
 			}
 	
