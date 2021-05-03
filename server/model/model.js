@@ -9,6 +9,10 @@ var schema = new mongoose.Schema({
         type: String,
         required: true
     },
+    pcity: {
+        type: String,
+        required: true
+    },
     age : {
         type: Number,
         required: true
