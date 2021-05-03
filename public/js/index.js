@@ -1,4 +1,4 @@
-const staticRoot = "http://localhost:3000"
+const staticRoot = "http://mit-covid-support.herokuapp.com"
 $(document).ready(function(){
 	$(".thankyou").hide();
  //$(".vthankyou").hide();	
