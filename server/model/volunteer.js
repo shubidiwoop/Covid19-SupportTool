@@ -5,10 +5,7 @@ var schema = new mongoose.Schema({
         type : String,
         required: true
     },
-    vlname : {
-        type: String,
-        required: true
-    },
+    vlname : String,
     vphone : {
         type: Number,
         required: true

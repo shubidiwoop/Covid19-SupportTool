@@ -11,7 +11,6 @@ $(document).ready(function(){
 		var cpho = $("#PatientContact").val();
 		var cname = $("#ContactName").val();
 		var  pcity= $("#PatientCity").val();
-		console.log(pname);
 		if(pname!=''&&location!=''&&age!=''&&requirement!=''&&gender!=''&&cpho!=''&&cname!=''&&pcity!=''){
 		var body = {
 			name: pname,
@@ -53,6 +52,11 @@ $(document).ready(function(){
 	  })
 });
 
+function isEmail(email) {
+	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return regex.test(email);
+  }
+
 $(document).ready(function(){
 	window.document.querySelector('#VolunteerButton').addEventListener('click', event => {
 		var vfname = $("#VolunteerFN").val();
@@ -61,7 +65,7 @@ $(document).ready(function(){
 		var vphone = $("#VolunteerPhone").val();
 		var vlocation = $("#VolunteerLocation").val();
 		var vhometown = $("#VolunteerHometown").val();
-		if(vfname!=''&&vmail!=''&&vphone!=''&&vlocation!=''&&vhometown!=''&&vlname!=''){
+		if(vfname!=''&&vmail!=''&&vphone!=''&&vlocation!=''&&vhometown!=''&&vlname!=''&&isEmail(vmail)){
 		var body = {
 			vfname: vfname,
 			vlname:vlname,
@@ -84,13 +88,17 @@ $(document).ready(function(){
 			},
 			data: body,
 			success: function(response){
+				console.log(response);
+					if(typeof response.link1 !== 'undefined'){
 				      var responselink1= response.link1;
 					  responselink1= responselink1.replace("t.","telegram.");
+					}
+					if(typeof response.link2 !== 'undefined'){
 					  var responselink2= response.link2;
 					  responselink2= responselink2.replace("t.","telegram.");
-		
+					}
 					$("#profile").hide();
-                    $(".vthankyou").append("<h5>Thank you for showing interest kindly click on the below telegram link to join the team.<br><br> <a href='"+responselink1+"'>Current Town</a><br><br> <a href='"+responselink2+"'>HomeTown</a></h5>");	
+                    $(".vthankyou").append("<h5>Thank you for showing interest kindly click on the below telegram link to join the team.<br><br> <a href='"+ responselink1 + "'>Current Town</a><br><br> <a href='"+ responselink2 +"'>HomeTown</a></h5>");	
                     $(".thankyou").hide();	
 			}
 	
@@ -98,7 +106,7 @@ $(document).ready(function(){
 	}
 	else{
 
-		alert("All fields are mandatory.Kindly fill all the fields.")
+		alert("Check all the required fields.")
 	}
 	  });
 
