@@ -27,7 +27,7 @@ exports.create = (req,res)=>{
     .save(request)
     .then(data => {
         res.send(data);
-        const msg = "New Requirement Alert." + "\nPatient City : " + data.pcity + "\nAge : " + data.age +"\nGender :" + data.gender  + "\nBlood : " + data.blood +"\nPatient Name : " + data.pname + " \nRequirement : " + data.requirement + "\nContact Name : " + data.cname + "\nContact Number : " + data.cpho;
+        const msg = "New Requirement Alert." +"\nPatient Name : " + data.pname + "\nPatient City : " + data.pcity + "\nAge : " + data.age +"\nGender :" + data.gender+"\nRequirement : " + data.requirement  + "\nBlood : " + data.blood  + "\nContact Name : " + data.cname + "\nContact Number : " + data.cpho;
         post(data.location,msg);
     })
     .catch(err => {

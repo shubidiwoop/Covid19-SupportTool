@@ -11,6 +11,7 @@ $(document).ready(function(){
 		var cpho = $("#PatientContact").val();
 		var cname = $("#ContactName").val();
 		var  pcity= $("#PatientCity").val();
+		var blood = $("#BloodGroup").val();
 		if(pname!=''&&location!=''&&age!=''&&requirement!=''&&gender!=''&&cpho!=''&&cname!=''&&pcity!=''){
 		var body = {
 			name: pname,
@@ -20,7 +21,8 @@ $(document).ready(function(){
 			gender:gender,
 			cpho:cpho,
 			cname:cname,
-			pcity:pcity
+			pcity:pcity,
+			blood: blood
 		};
 		$.ajax({
 			method: "POST",
