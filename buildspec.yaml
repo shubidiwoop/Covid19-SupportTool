@@ -7,11 +7,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-#       - npm run build
+#       - npm start
   post_build:
     commands:
       # copy the contents of /build to S3
-      - aws s3 cp --recursive --acl public-read ./build s3://cloudfrontstack-s3bucket-y8n8yt2kgd5u/ 
+      - aws s3 cp --recursive --acl public-read ./ s3://cloudfrontstack-s3bucket-y8n8yt2kgd5u/ 
       # set the cache-control headers for service-worker.js to prevent
       # browser caching
       # - >
