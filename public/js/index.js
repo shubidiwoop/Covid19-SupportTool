@@ -1,4 +1,4 @@
-const staticRoot = "http://mit-covid-support.herokuapp.com"
+const staticRoot = "https://mit-covid-support.herokuapp.com"
 $(document).ready(function(){
 	$(".thankyou").hide();
  //$(".vthankyou").hide();	
