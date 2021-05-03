@@ -20,14 +20,14 @@ exports.create = (req,res)=>{
         cpho : req.body.cpho,
         blood : req.body.blood,
         status : false,
-        pcity:pcity
+        pcity: req.body.pcity
     })
 
     request
     .save(request)
     .then(data => {
         res.send(data);
-        const msg = "New Requirement Alert." + "\nPatient City" + data.pcity + "\nAge : " + data.age +"\nGender :" + data.gender  + "\nBlood : " + data.blood +"\nPatient Name : " + data.pname + " \nRequirement : " + data.requirement + "\nContact Name : " + data.cname + "\nContact Number : " + data.cpho;
+        const msg = "New Requirement Alert." + "\nPatient City : " + data.pcity + "\nAge : " + data.age +"\nGender :" + data.gender  + "\nBlood : " + data.blood +"\nPatient Name : " + data.pname + " \nRequirement : " + data.requirement + "\nContact Name : " + data.cname + "\nContact Number : " + data.cpho;
         post(data.location,msg);
     })
     .catch(err => {
