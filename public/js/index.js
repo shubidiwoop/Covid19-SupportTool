@@ -90,7 +90,6 @@ $(document).ready(function(){
 			},
 			data: body,
 			success: function(response){
-				console.log(response);
 					if(typeof response.link1 !== 'undefined'){
 				      var responselink1= response.link1;
 					  responselink1= responselink1.replace("t.","telegram.");
