@@ -67,6 +67,7 @@
     background: #f8f9fa;
     border-top-left-radius: 10% 50%;
     border-bottom-left-radius: 10% 50%;
+    
 }
 .register-left img{
     margin-top: 15%;
@@ -128,7 +129,7 @@ margin-left: 110px;
     margin-top: 3%;
     border: none;
     background: #0062cc;
-    border-radius: 1.5rem;
+
     width: 28%;
     float: right;
 }
@@ -137,8 +138,7 @@ margin-left: 110px;
     height: 34px;
     font-weight: 600;
     color: #fff;
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+  
 }
 .register .nav-tabs .nav-link:hover{
     border: none;
@@ -147,8 +147,7 @@ margin-left: 110px;
     width: 100px;
     color: #0062cc;
     border: 2px solid #0062cc;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
+   
 }
 .register-heading{
     text-align: center;
@@ -168,7 +167,7 @@ margin-left: 110px;
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>Welcome To Covid Help portal</h3>
                         <p>Our Volunteers are working round the clock to provide whatsoever help is possible in these desperate times!</p>
-                        <p><strong>Disclaimer:</strong> Registering on our website doesn't gaurantee leads. We will try our best to help you out. </p>
+                        <p><strong>Disclaimer:</strong>  The user understands that the data provided by, is collected and verified by volunteers to the best of their ability. However we sincerely request the users to reverify and confirm the identity of any vendor or service provider. </p>
                         
                     </div>
                     <div class="col-md-9 register-right">
@@ -189,12 +188,41 @@ margin-left: 110px;
                                             <input type="text" id="PatientName" required class="form-control" placeholder="Patient's Name *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <select  id="PatientLocation" name="PatientLocation">
+                                            <select  id="PatientLocation" data-live-search="true" name="PatientLocation">
                                                 <option selected disabled>Select the State</option>
-                                                <option value="Delhi">Delhi</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
                                                 <option value="Maharashtra">Maharashtra</option>
-                                              </select
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select
 >
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" required id="PatientCity" placeholder="City *" value="" />
                                         </div>
                                         <div class="form-group">
                                             <input type="number" class="form-control" id="PatientAge" placeholder="Age" value="" />
@@ -245,10 +273,72 @@ margin-left: 110px;
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control" required id="VolunteerLocation" placeholder="Current Location*" value="" />
+                                            <select  id="VolunteerLocation" data-live-search="true" name="Current Location">
+                                                <option selected disabled>Current Location</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select
+>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10"id="VolunteerHometown"  class="form-control" required placeholder="Hometown *" value="" />
+                                            <select  id="VolunteerHometown" data-live-search="true" name="Hometown">
+                                                <option selected disabled>Hometown</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select
+>
                                         </div>
                                         <div>
                                             <input type="submit" class="btnRegister" id="VolunteerButton" value="Register"/>
