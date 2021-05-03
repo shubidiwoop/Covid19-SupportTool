@@ -7,7 +7,7 @@ const state_chatid= {
     "Delhi":"-420648164",
     "Jharkhand":"-551400524",
     "Bihar":"-551400524",
-    "Bangalore ":"-544925856",
+    "Karnataka ":"-544925856",
     "UttarPradesh":"-590361618",
     "MadhyaPradesh":"-542132814",
     "AndhraPradesh":"-568320408",

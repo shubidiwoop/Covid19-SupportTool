@@ -1,9 +1,19 @@
 const requestDb = require('../model/model');
 const volunteerDb = require('../model/volunteer');
 const post = require('../bot/telegram');
-const dotenv = require('dotenv');
-dotenv.config({path:'config.env'})
-const tlink = {"Delhi" : process.env.TLINK_DEL}
+const tlink = {
+                "Delhi" : "https://t.me/joinchat/BDVF0yUrqPpkYzg1",
+                "Rajasthan" : "https://t.me/joinchat/GDxfOaN_t24xNTg9",
+                "Uttarakhand" : "https://t.me/joinchat/e3JSySsRCdVhYTU1", 
+                "ArunachalPradesh" :"https://t.me/joinchat/MQsJGuCkAPwzNGM1",
+                "Telangana":"https://t.me/joinchat/MQsJGuCkAPwzNGM1",
+                "MadhyaPradesh":"https://t.me/joinchat/YYbOjpxJiDo5Y2M1",
+                "UttarPradesh":"https://t.me/joinchat/tpLea_QGyTYxZWI1",
+                "Maharashtra":"https://t.me/joinchat/yigX9vqT8oJiNDg1",
+                "Karnataka":"https://t.me/joinchat/xHScWmlJZx40NzQ1",
+                "Jharkhand":"https://t.me/joinchat/N9lE9R61PZgwNDZl",
+                "Bihar":"https://t.me/joinchat/N9lE9R61PZgwNDZl"
+            }
 exports.create = (req,res)=>{
     if(!req.body){
         res.status(400).send({message : "Content Empty"});
